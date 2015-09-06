@@ -27,12 +27,14 @@ public class GeneratorService {
         Category clothes = new Category("Clothes");
         Category devices = new Category("Computer devices");
         Category balls = new Category("Balls");
+        Category souvenir = new Category("Сувениры");
 
         categoryDao.save(phones);
         categoryDao.save(cars);
         categoryDao.save(clothes);
         categoryDao.save(devices);
         categoryDao.save(balls);
+        categoryDao.save(souvenir);
 
         productDao.save(new Product(phones, "IPhone 6", 45000.54));
         productDao.save(new Product(phones, "IPhone 5", 40000.99));
@@ -51,5 +53,10 @@ public class GeneratorService {
         productDao.save(new Product(devices, "Benq Display 17", 4400.44));
         productDao.save(new Product(devices, "USB flash memory", 400.00));
         productDao.save(new Product(devices, "Motherboard", 10500.44));
+
+        productDao.save(new Product(souvenir, "Матрёшка", 99.99));
+        productDao.save(new Product(souvenir, "Магнит с кремлем", 199.99));
+        productDao.save(new Product(souvenir, "Футболка с НГУ", 200.00));
+        productDao.save(new Product(souvenir, "Флаг РФ", 150.00));
     }
 }
