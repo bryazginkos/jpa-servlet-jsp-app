@@ -6,8 +6,10 @@ import javax.persistence.*;
  * Created by Kos on 04.09.2015.
  */
 @Entity
-@Table(name = "CAT")
+@Table(name = Category.TABLE_NAME)
 public class Category {
+
+    public static final String TABLE_NAME = "CAT";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

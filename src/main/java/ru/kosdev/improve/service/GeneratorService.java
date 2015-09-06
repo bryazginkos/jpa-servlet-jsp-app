@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.kosdev.improve.dao.CategoryDao;
+import ru.kosdev.improve.dao.Cleaner;
 import ru.kosdev.improve.dao.ProductDao;
 import ru.kosdev.improve.entity.Category;
 import ru.kosdev.improve.entity.Product;
@@ -20,8 +21,13 @@ public class GeneratorService {
     @Autowired
     private CategoryDao categoryDao;
 
+    @Autowired
+    private Cleaner cleaner;
+
     @Transactional
     public void generateEntities() {
+        cleaner.clean();
+
         Category phones = new Category("Phones");
         Category cars = new Category("Cars");
         Category clothes = new Category("Clothes");
