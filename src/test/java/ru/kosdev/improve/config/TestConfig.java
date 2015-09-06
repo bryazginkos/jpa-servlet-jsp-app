@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import ru.kosdev.improve.dao.CategoryDao;
+import ru.kosdev.improve.dao.Cleaner;
 import ru.kosdev.improve.dao.ProductDao;
 
 import javax.persistence.EntityManagerFactory;
@@ -23,6 +24,11 @@ public class TestConfig {
     @Bean
     public CategoryDao categoryDao() {
         return Mockito.mock(CategoryDao.class);
+    }
+
+    @Bean
+    public Cleaner cleaner() {
+        return Mockito.mock(Cleaner.class);
     }
 
     @Bean
